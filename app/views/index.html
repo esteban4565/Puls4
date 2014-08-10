@@ -8,13 +8,12 @@
     <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/puls4.css" />
 
+    {% if env === "dev" %}
     <script src="/js/vendor/jquery-2.0.3.js"></script>
     <script src="/js/vendor/underscore.js"></script>
     <script src="/js/vendor/backbone.js"></script>
     <script src="/js/vendor/swig.js"></script>
-
     <script src="/js/vendor/socket.io.js"></script>
-
     <script src="/js/vendor/neon.js"></script>
     <script src="/js/vendor/CustomEvent.js"></script>
     <script src="/js/vendor/CustomEventSupport.js"></script>
@@ -28,6 +27,7 @@
     <script src="/js/backbone/views/app.js"></script>
 
     <script src="/js/main.js"></script>
+    {% endif %}
 </head>
 <body>
     <header>
@@ -115,6 +115,11 @@
             </div>
         </article>
         </script>
+        {% if env === "prod" %}
+        <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="/vendor.min.js"></script>
+        <script src="/app.min.js"></script>
+        {% endif %}
 </body>
 </html>
 
